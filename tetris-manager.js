@@ -28,7 +28,7 @@ class TetrisManager {
       var skor = this.lastResult.score;
       document.getElementById('numberfans').innerHTML = skor;
       var persenskor = ((parseInt(skor)/60260)*100).toFixed(2);
-      document.getElementById('percentstad').innerHTML = persenskor+"% kapasiti Stadium Emirates";  
+      document.getElementById('percentstad').innerHTML = persenskor+"% kapasiti<br/>Stadium Emirates";  
       var gover = document.getElementById('gameover');
       gover.style.display='block';
       

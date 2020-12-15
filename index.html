@@ -17,6 +17,7 @@
       font-family: 'LED';
       margin:0 auto;
       padding:0px;
+      overflow: hidden;
     }
     #splash{
       color: red;
@@ -78,12 +79,13 @@
       var inWid = window.innerWidth;
       var h = window.innerHeight;
       var w = inWid;
-      var sqs = Math.round(inWid/14);
-      var lv = 4; 
+      var sqs = Math.round(inWid/16);
+      var lv = 4;
+      var mgap = 0; 
     }
     else {
       //pc
-      var w = 800; var h = 650; var sqs = 30; var lv = 8; var mgap = 0;
+      var w = 800; var h = 750; var sqs = 30; var lv = 8; var mgap = 50;
     }
 
     const canvas = document.getElementById('tetris-canvas');
@@ -97,11 +99,11 @@
     var govstyle = document.getElementById('gameover').style;
     
     
-    ssbstyle.left = String(((sqs*2)+10)+'px');
-    ssbstyle.top = String(((sqs*22)+5)+'px');
-    qbstyle.left = String(((sqs*2)+80)+'px');
-    qbstyle.top = String(((sqs*22)+5)+'px');
-    spstyle.left = String((sqs+20)+'px');
+    ssbstyle.left = String((sqs*3)+'px');
+    ssbstyle.top = String(((sqs*22)+10)+'px');
+    qbstyle.left = String(((sqs*3)+70)+'px');
+    qbstyle.top = String(((sqs*22)+10)+'px');
+    spstyle.left = String((sqs+20+mgap)+'px');
     spstyle.top = String(((sqs*4)+5)+'px');
     govstyle.left = String((sqs+14)+'px');
     govstyle.top = String(((sqs*4)+5)+'px');
@@ -109,17 +111,18 @@
     
 
     const tetris = new ClassicTetris(canvas, {
-      boardX: sqs*2,
+      boardX: sqs*3,
+      boardY: 0,
       squareSide: sqside,
-      scoreLabelX: sqs*2,
+      scoreLabelX: sqs*3,
       scoreLabelY: 30,
       scoreX: sqs*2 + 150,             // score coords
       scoreY: 30,
       //nextX: sqs*5,               // next text coords
       //nextY: sqs*24,
-      nextOffsetX: sqs*8, //*8
-      nextOffsetY: sqs*22, //*22
-      pauseX: (sqs*10)/2 - 25,
+      nextOffsetX: sqs*9, //*8
+      nextOffsetY: (sqs*22)+10, //*22
+      pauseX: (sqs*12)/2 - 25,
       pauseY: (sqs*20)/2 + 20,
       gameTheme: new Audio('res/gameTheme.mp3'),
       tetrisSound: new Audio('res/themetetris.mp3'),

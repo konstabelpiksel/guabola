@@ -120,7 +120,7 @@ class ClassicTetris {
         gameOverColor = [ '#cc0033', '#787878' ],
         ghostColor = [ '#000', '#fff' ],
         
-        canvasFont = '22px LED',
+        canvasFont = '20px LED',
         canvasFontColor = '#fff',
         
         //backgroundColor = '#222',
@@ -1356,9 +1356,9 @@ class ClassicTetris {
   //skor ikut berapa kotak clear, satu line 10 kotak
  _getLinesScore(lines, lvl) {
   if (lines === 1) return 10;
-  else if (lines === 2) return 25; //bonus 5
-  else if (lines === 3) return 40; //bonus 10
-  return 80;    // tetris!
+  else if (lines === 2) return 40; //bonus 5
+  else if (lines === 3) return 60; //bonus 10
+  return 100;    // tetris!
 }
 
   // ARE is 10~18 frames depending on the height at which the piece locked; 
@@ -1611,7 +1611,7 @@ class ClassicTetris {
     this.context.fillText(scoreStrLabel, this.scoreLabelX, this.scoreLabelY);
     this.context.fillText(nextStr, this.nextX, this.nextY);
 
-    this.context.font = '22px LED';
+    this.context.font = '20px LED';
     this.context.fillText(scoreMarks, this.scoreX, this.scoreY);
  
   }
