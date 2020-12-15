@@ -24,7 +24,7 @@
       position: absolute;
       margin: 0 auto;
       padding: 0;
-      width: 90%;
+      width: 80%;
       max-width: 360px;  
     }
     #gameover{
@@ -34,7 +34,7 @@
       color: #fff;
       text-align: center;
       width: 80%;
-      max-width: 350px;
+      max-width: 360px;
       font: 20px Helvetica;
     }
     #numberfans{
@@ -50,7 +50,7 @@
   <img src="res/splash.png" alt=""/>
 </div>
 
-<div id="gameover" style="display: none;">
+<div id="gameover" style="display: none">
   <img src="res/gover.png" alt="" />
   <p style="margin-top:0px"><span id="numberfans">&nbsp;</span><br/>fans berjaya masuk gua</p>
   <h3 id="percentstad">&nbsp;</h3> 
@@ -103,9 +103,11 @@
     ssbstyle.top = String(((sqs*22)+10)+'px');
     qbstyle.left = String(((sqs*3)+70)+'px');
     qbstyle.top = String(((sqs*22)+10)+'px');
+
     spstyle.left = String((sqs+20+mgap)+'px');
     spstyle.top = String(((sqs*4)+5)+'px');
-    govstyle.left = String((sqs+14)+'px');
+    
+    govstyle.left = String((sqs+5+(mgap/2))+'px');
     govstyle.top = String(((sqs*4)+5)+'px');
     
     
@@ -116,7 +118,7 @@
       squareSide: sqside,
       scoreLabelX: sqs*3,
       scoreLabelY: 30,
-      scoreX: sqs*2 + 150,             // score coords
+      scoreX: sqs*2 + 150 + mgap,             // score coords
       scoreY: 30,
       //nextX: sqs*5,               // next text coords
       //nextY: sqs*24,
