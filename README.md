@@ -1,5 +1,7 @@
 # guabola
 
+Game url: https://guabola.netlify.app
+
 A modified and reskinned Tetris game to celebrate the bantz!
 
 For now its Arsenal. Other teams coming soon!
